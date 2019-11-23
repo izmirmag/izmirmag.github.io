@@ -1,4 +1,3 @@
-if($("body").attr("class")!="static_page"){
 function m(a) {
 	for (var i = a.feed.entry.length - 1; i > 0; i--) {
 		for (var j = 0; j < a.feed.entry[i].link.length; j++) {
@@ -31,8 +30,6 @@ function m(a) {
 } // function
 
 document.write('<script type="text/javascript" src="/feeds/posts/summary/-/etkinlik?max-results=150&alt=json-in-script&callback=m"><\/script>');
-
-} // if
 
 $(function () {
 	$(".tkv").tkv({
