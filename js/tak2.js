@@ -1,3 +1,4 @@
+if($("body").attr("class")!="static_page"){
 function m(a) {
 	for (var i = a.feed.entry.length - 1; i > 0; i--) {
 		for (var j = 0; j < a.feed.entry[i].link.length; j++) {
@@ -25,13 +26,16 @@ function m(a) {
 		var im = '<p class="ae" data-date="' + dy.replace("01", "1").replace("02", "2").replace("03", "3").replace("04", "4").replace("05", "5").replace("06", "6").replace("07", "7").replace("08", "8").replace("09", "9") + "-" + m3 + "-" + yr + '" data-link="' + ik.replace("https://www.izmirmag.net","") + '" data-title="' + b + ' // '+lo+'"></p>';
 
 		$(".tkv").append(im);
-	}
+	} // for
 
-}
+} // function
+
+document.write('<script type="text/javascript" src="/feeds/posts/summary/-/etkinlik?max-results=150&alt=json-in-script&callback=m"><\/script>');
+
+} // if
 
 $(function () {
 	$(".tkv").tkv({
 		lang: "TR"
 	})
 });
-document.write('<script type="text/javascript" src="/feeds/posts/summary/-/etkinlik?max-results=150&alt=json-in-script&callback=m"><\/script>');
