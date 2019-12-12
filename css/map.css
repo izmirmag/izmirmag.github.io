@@ -5,10 +5,7 @@
   line-height: 1.5 !important;
   text-align: left;
 }
-
-.gpp-place-image {
-	
-}
+.gpp-main-container a{color:#000}
 
 .gpp-place-image img {
 	display: block;
@@ -22,10 +19,6 @@
 
 .gpp-place-name {
 	font-size: 18px;
-}
-
-.gpp-rating-container {
-
 }
 
 .gpp-place-type {
@@ -62,11 +55,6 @@
 	width: 13px;
 	height: 13px;
 }
-
-.gpp-business-parameter svg path {
-  
-}
-
 
 .gpp-business-parameter-info {
 	display: inline-block;
@@ -167,16 +155,8 @@
 	margin: 0;
 }
 
-.gpp-review-time {
-
-}
-
 .gpp-review-text {
-	margin: 10px 0 0 0;
-}
-
-.gpp-review-text-less {
-
+	margin: 10px 0 0 0;font-size: 14px;
 }
 
 .gpp-review-text-more {
