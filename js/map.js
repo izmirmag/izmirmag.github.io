@@ -56,26 +56,6 @@ GooglePlaceReviewsInstance.prototype = {
 			if (b === google.maps["places"]["PlacesServiceStatus"]["OK"]) {
 				var a = "";
 				a = '<div class="gpp-main-container gpp-main-container-' + this["_INSTANCE_ID"] + '" style="width:' + (this["_WIDTH"] == "auto" ? this["_WIDTH"] : this["_WIDTH"] + "px") + ";height:" + (this["_HEIGHT"] == "auto" ? this["_HEIGHT"] : this["_HEIGHT"] + "px") + '">';
-				a += '<div class="gpp-place-image"><img src="' + c.photos[0]["getUrl"]({
-					"\x6D\x61\x78\x57\x69\x64\x74\x68": (this["_WIDTH"] == "auto" ? this["_DOM_ELEMENT"]["clientWidth"] : this["_WIDTH"])
-				}) + '" /></div>';
-				a += '<div class="gpp-overview-container" style="background-color:' + this["_COLOR"] + '">';
-				a += '<div class="gpp-place-name">' + c.name + "</div>";
-				a += '<div class="gpp-place-type"><img src="'+c.icon+'"/> ' + c.types[0] + "</div>";
-				a += "</div>";
-				if (this["_SHOW_BUSINESS_INFO"] == 1) {
-					a += '<div class="gpp-business-info-container">';
-					if ("formatted_address" in c) {
-						a += '<div class="gpp-business-address gpp-business-parameter"><span class="gpp-business-parameter-icon">' + GooglePlaceReviews.location_svg + '</span><span class="gpp-business-parameter-info">' + c.formatted_address + "</span></div>"
-					}
-					if ("international_phone_number" in c) {
-						a += '<div class="gpp-business-phone gpp-business-parameter"><span class="gpp-business-parameter-icon">' + GooglePlaceReviews.phone_svg + '</span><span class="gpp-business-parameter-info">' + c.international_phone_number + "</span></div>"
-					}
-					if ("opening_hours" in c) {
-						a += '<div class="gpp-business-phone gpp-business-parameter"><span class="gpp-business-parameter-icon">' + GooglePlaceReviews.website_svg + '</span><span class="gpp-business-parameter-info"><a href="' + c.website + '" target="_blank">' + c.opening_hours.weekday_text[0] + "</a></span></div>"
-					}
-					a += "</div>"
-				}
 				a += '<div class="gpp-review-overview">';
 				a += '<div class="gpp-average-review" style="color:' + this["_COLOR"] + '">' + c.rating + "</div>";
 				a += '<div class="gpp-average-review-stars">' + GooglePlaceReviews.getStarsHTML(c.rating) + "</div>";
