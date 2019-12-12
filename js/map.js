@@ -84,7 +84,7 @@ GooglePlaceReviewsInstance.prototype = {
 					}
 					a += "</div>"
 				}
-				a += '<div class="gpp-footer"><a href="' + c.url + '" target="_blank" style="color:' + this["_COLOR"] + '">See All Reviews</a><a href="https://search.google.com/local/writereview?placeid=' + this["_PLACE_ID"] + '" target="_blank" style="color:' + this["_COLOR"] + '">Write a Review</a></div>';
+				a += '<div class="gpp-footer"><a href="' + c.url + '" target="_blank" style="color:' + this["_COLOR"] + '">Tümünü Göster</a><a href="https://search.google.com/local/writereview?placeid=' + this["_PLACE_ID"] + '" target="_blank" style="color:' + this["_COLOR"] + '">Yorum Yap</a></div>';
 				a += "</div>";
 				this["_DOM_ELEMENT"]["innerHTML"] = a;
 				if (this["_HEIGHT"] != "auto") {
