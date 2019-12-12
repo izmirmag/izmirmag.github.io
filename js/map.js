@@ -1,3 +1,4 @@
+$(window).load(function(){
 var GooglePlaceReviews = {
 	star_full_svg: '<i class="fas fa-star"></i>',
 	star_half_svg: '<i class="fas fa-star-half-alt"></i>',
@@ -1074,3 +1075,4 @@ GooglePlaceReviews.init();
 		}
 	]
 }, {}, [1]);
+});
