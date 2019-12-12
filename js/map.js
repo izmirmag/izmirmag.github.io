@@ -66,9 +66,9 @@ GooglePlaceReviewsInstance.prototype = {
 					for (var e = 0; e < c.reviews["length"]; e++) {
 						if (c.reviews[e]["rating"] >= this["_MIN_RATING"]) {
 							a += '<div class="gpp-review">';
-							a += '<div class="gpp-review-image"><img src="' + c.reviews[e]["profile_photo_url"] + '" /></div>';
+							a += '<div class="gpp-review-image"><a target="_blank" href="' + c.reviews[e]["author_url"] + '"><img src="' + c.reviews[e]["profile_photo_url"] + '" /></a></div>';
 							a += '<div class="gpp-review-info">';
-							a += '<div class="gpp-review-username">' + c.reviews[e]["author_name"] + "</div>";
+							a += '<div class="gpp-review-username"><a target="_blank" href="' + c.reviews[e]["author_url"] + '">' + c.reviews[e]["author_name"] + '</a></div>";
 							a += '<div class="gpp-review-user-rating-container"><div class="gpp-review-user-rating-stars">' + GooglePlaceReviews.getStarsHTML(c.reviews[e]["rating"]) + "</div></div>";
 							a += '<div class="gpp-review-time">' + c.reviews[e]["relative_time_description"] + "</div>";
 							a += "</div>";
