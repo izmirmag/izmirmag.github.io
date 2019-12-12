@@ -1,0 +1,1096 @@
+var GooglePlaceReviews = {
+	star_full_svg: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"><g><g id="star"><polygon points="255,402.212 412.59,497.25 370.897,318.011 510,197.472 326.63,181.738 255,12.75 183.371,181.738 0,197.472 139.103,318.011 97.41,497.25 "/></g></g></svg>',
+	star_half_svg: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"><g><g id="star-half"><path d="M510,197.472l-183.37-15.734L255,12.75l-71.629,168.988L0,197.472l0,0l0,0l139.103,120.539L97.41,497.25L255,402.186l0,0l157.59,95.039l-41.692-179.239L510,197.472z M255,354.348V117.172l43.605,102.918l111.689,9.588l-84.711,73.389l25.398,109.166L255,354.348z"/></g></g></svg>',
+	star_empty_svg: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"><g><g id="star-outline"><path d="M510,197.472l-183.37-15.734L255,12.75l-71.629,168.988L0,197.472l139.103,120.539L97.41,497.25L255,402.186l157.59,95.064l-41.692-179.239L510,197.472z M255,354.348l-95.957,57.886l25.398-109.166l-84.736-73.389l111.69-9.588L255,117.172l43.605,102.918l111.689,9.588l-84.711,73.389l25.398,109.166L255,354.348z"/></g></g></svg>',
+	location_svg: '<svg style="enable-background:new 0 0 24 24" height="24px" version="1.1" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M11.513,12.38c-2.117,0-3.835-1.729-3.835-3.862c0-2.135,1.718-3.863,3.835-3.863s3.835,1.729,3.835,3.863  C15.348,10.65,13.63,12.38,11.513,12.38 M11.513,0C6.825,0,3.025,3.827,3.025,8.549c0,4.46,3.844,10.213,6.411,13.014  c0.959,1.045,2.076,2.454,2.076,2.454s1.2-1.417,2.229-2.493C16.306,18.84,20,13.451,20,8.549C20,3.827,16.2,0,11.513,0"/></svg>',
+	phone_svg: '<svg height="18px" version="1.1" viewBox="0 0 18 18" width="18px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g fill="#000000" transform="translate(-85.000000, -126.000000)"><g transform="translate(85.000000, 126.000000)"><path d="M3.6,7.8 C5,10.6 7.4,12.9 10.2,14.4 L12.4,12.2 C12.7,11.9 13.1,11.8 13.4,12 C14.5,12.4 15.7,12.6 17,12.6 C17.6,12.6 18,13 18,13.6 L18,17 C18,17.6 17.6,18 17,18 C7.6,18 0,10.4 0,1 C0,0.4 0.4,0 1,0 L4.5,0 C5.1,0 5.5,0.4 5.5,1 C5.5,2.2 5.7,3.4 6.1,4.6 C6.2,4.9 6.1,5.3 5.9,5.6 L3.6,7.8 L3.6,7.8 Z" id="Shape"/></g></g></g></svg>',
+	website_svg: '<svg style="enable-background:new 0 0 96 96" height="96px" version="1.1" viewBox="0 0 96 96" width="96px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M49.69,4.03C49.13,4.01,48.57,4,48,4s-1.13,0.01-1.69,0.03C22.79,4.92,4,24.27,4,48c0,23.73,18.79,43.08,42.31,43.97  C46.87,91.99,47.43,92,48,92s1.13-0.01,1.69-0.03C73.21,91.08,92,71.73,92,48C92,24.27,73.21,4.92,49.69,4.03z M83.77,44H67.86  c-0.91-13.4-6.271-24.09-10.74-30.84C71.33,16.88,82.13,29.06,83.77,44z M48.01,14.18C51.94,19.3,58.71,29.98,59.84,44H36.16  C37.29,30.04,44.08,19.32,48.01,14.18z M59.84,52c-1.13,13.96-7.91,24.68-11.85,29.82C44.06,76.7,37.29,66.02,36.16,52H59.84z   M38.88,13.16C34.41,19.91,29.05,30.6,28.14,44H12.23C13.87,29.06,24.67,16.88,38.88,13.16z M12.23,52h15.91  c0.91,13.39,6.26,24.08,10.73,30.83C24.66,79.12,13.87,66.94,12.23,52z M57.13,82.83C61.6,76.08,66.95,65.39,67.86,52H83.77  C82.13,66.94,71.34,79.12,57.13,82.83z"/></svg>',
+	map: null,
+	service: null,
+	instances: [],
+	init: function () {
+		this["map"] = new google.maps.Map(document.createElement("div"));
+		this["service"] = new google.maps["places"].PlacesService(this["map"]);
+		var b = document.querySelectorAll(".gpp-plugin");
+		for (var a = 0; a < b.length; a++) {
+			this["addInstance"](b[a])
+		}
+	},
+	addInstance: function (a) {
+		this["instances"]["push"](new GooglePlaceReviewsInstance((a.getAttribute("data-place-id")), (a.getAttribute("data-width") === null ? "auto" : a.getAttribute("data-width")), (a.getAttribute("data-height") === null ? "auto" : a.getAttribute("data-height")), (a.getAttribute("data-color") === null ? "#EB6E00" : a.getAttribute("data-color")), (a.getAttribute("data-min-rating") === null ? 1 : a.getAttribute("data-min-rating")), (a.getAttribute("data-show-business-info") === null ? 1 : a.getAttribute("data-show-business-info")), (a)))
+	},
+	getStarsHTML: function (f) {
+		var d = Math.floor(f),
+		c = Math.ceil(f),
+		b = (d < c ? 1 : 0),
+		a = 5 - d - b,
+		e = "";
+		for (var g = 0; g < d; g++) {
+			e += this["star_full_svg"]
+		}
+		if (b == 1) {
+			e += this["star_half_svg"]
+		}
+		for (g = 0; g < a; g++) {
+			e += this["star_empty_svg"]
+		}
+		return e
+	}
+};
+function GooglePlaceReviewsInstance(f, d, b, a, e, c, g) {
+	this["_DOM_ELEMENT"] = g;
+	this["_INSTANCE_ID"] = GooglePlaceReviews.instances["length"];
+	this["_PLACE_ID"] = f;
+	this["_COLOR"] = a;
+	this["_WIDTH"] = d;
+	this["_HEIGHT"] = b;
+	this["_MIN_RATING"] = e;
+	this["_SHOW_BUSINESS_INFO"] = c;
+	this["addHTML"]()
+}
+GooglePlaceReviewsInstance.prototype = {
+	addHTML: function () {
+		GooglePlaceReviews.service["getDetails"]({
+			placeId: this["_PLACE_ID"]
+		}, function (c, b) {
+			if (b === google.maps["places"]["PlacesServiceStatus"]["OK"]) {
+				var a = "";
+				a = '<div class="gpp-main-container gpp-main-container-' + this["_INSTANCE_ID"] + '" style="width:' + (this["_WIDTH"] == "auto" ? this["_WIDTH"] : this["_WIDTH"] + "px") + ";height:" + (this["_HEIGHT"] == "auto" ? this["_HEIGHT"] : this["_HEIGHT"] + "px") + '">';
+				a += '<div class="gpp-place-image"><img src="' + c.photos[0]["getUrl"]({
+					"\x6D\x61\x78\x57\x69\x64\x74\x68": (this["_WIDTH"] == "auto" ? this["_DOM_ELEMENT"]["clientWidth"] : this["_WIDTH"])
+				}) + '" /></div>';
+				a += '<div class="gpp-overview-container" style="background-color:' + this["_COLOR"] + '">';
+				a += '<div class="gpp-place-name">' + c.name + "</div>";
+				a += '<div class="gpp-place-type"><img src="'+c.icon+'"/> ' + c.types[0] + "</div>";
+				a += "</div>";
+				if (this["_SHOW_BUSINESS_INFO"] == 1) {
+					a += '<div class="gpp-business-info-container">';
+					if ("formatted_address" in c) {
+						a += '<div class="gpp-business-address gpp-business-parameter"><span class="gpp-business-parameter-icon">' + GooglePlaceReviews.location_svg + '</span><span class="gpp-business-parameter-info">' + c.formatted_address + "</span></div>"
+					}
+					if ("international_phone_number" in c) {
+						a += '<div class="gpp-business-phone gpp-business-parameter"><span class="gpp-business-parameter-icon">' + GooglePlaceReviews.phone_svg + '</span><span class="gpp-business-parameter-info">' + c.international_phone_number + "</span></div>"
+					}
+					if ("opening_hours" in c) {
+						a += '<div class="gpp-business-phone gpp-business-parameter"><span class="gpp-business-parameter-icon">' + GooglePlaceReviews.website_svg + '</span><span class="gpp-business-parameter-info"><a href="' + c.website + '" target="_blank">' + c.opening_hours.weekday_text[0] + "</a></span></div>"
+					}
+					a += "</div>"
+				}
+				a += '<div class="gpp-review-overview">';
+				a += '<div class="gpp-average-review" style="color:' + this["_COLOR"] + '">' + c.rating + "</div>";
+				a += '<div class="gpp-average-review-stars">' + GooglePlaceReviews.getStarsHTML(c.rating) + "</div>";
+				a += "</div>";
+				if ("reviews" in c) {
+					a += '<div class="gpp-reviews-container">';
+					for (var e = 0; e < c.reviews["length"]; e++) {
+						if (c.reviews[e]["rating"] >= this["_MIN_RATING"]) {
+							a += '<div class="gpp-review">';
+							a += '<div class="gpp-review-image"><img src="' + c.reviews[e]["profile_photo_url"] + '" /></div>';
+							a += '<div class="gpp-review-info">';
+							a += '<div class="gpp-review-username">' + c.reviews[e]["author_name"] + "</div>";
+							a += '<div class="gpp-review-user-rating-container"><div class="gpp-review-user-rating">' + c.reviews[e]["rating"] + ' of 5 stars</div><div class="gpp-review-user-rating-stars">' + GooglePlaceReviews.getStarsHTML(c.reviews[e]["rating"]) + "</div></div>";
+							a += '<div class="gpp-review-time">posted ' + c.reviews[e]["relative_time_description"] + "</div>";
+							a += "</div>";
+							if ("text" in c.reviews[e]) {
+								if (c.reviews[e]["text"]["length"] < 150) {
+									a += '<div class="gpp-review-text">" ' + c.reviews[e]["text"] + ' "</div>'
+								} else {
+									a += '<div class="gpp-review-text"><span class="gpp-review-text-less">' + c.reviews[e]["text"]["substr"](0, 150) + '</span><span class="gpp-review-text-more">' + c.reviews[e]["text"]["substr"](150) + '</span><span class="gpp-review-text-dots">...</span><span class="gpp-review-text-more-button" data-more="0">See More</span></div>'
+								}
+							}
+							a += "</div>"
+						}
+					}
+					a += "</div>"
+				}
+				a += '<div class="gpp-footer"><a href="' + c.url + '" target="_blank" style="color:' + this["_COLOR"] + '">See All Reviews</a><a href="https://search.google.com/local/writereview?placeid=' + this["_PLACE_ID"] + '" target="_blank" style="color:' + this["_COLOR"] + '">Write a Review</a></div>';
+				a += "</div>";
+				this["_DOM_ELEMENT"]["innerHTML"] = a;
+				if (this["_HEIGHT"] != "auto") {
+					Ps.initialize(document.querySelector(".gpp-main-container-" + this["_INSTANCE_ID"]))
+				}
+				var g = document.createElement("style"),
+				f;
+				document.head["appendChild"](g);
+				g.sheet["insertRule"](".gpp-main-container-" + this["_INSTANCE_ID"] + " svg polygon, .gpp-main-container-" + this["_INSTANCE_ID"] + " svg path { fill: " + this["_COLOR"] + "; }", 0);
+				var d = this["_DOM_ELEMENT"]["querySelectorAll"](".gpp-review-text-more-button");
+				for (e = 0; e < d.length; e++) {
+					d[e]["addEventListener"]("click", function () {
+						if (this["getAttribute"]("data-more") == 0) {
+							this["setAttribute"]("data-more", 1);
+							this["style"]["display"] = "block";
+							this["style"]["marginTop"] = "2px";
+							this["style"]["width"] = "70px";
+							this["innerHTML"] = "See Less";
+							this["previousSibling"]["style"]["display"] = "none";
+							this["previousSibling"]["previousSibling"]["style"]["display"] = "inline"
+						} else {
+							if (this["getAttribute"]("data-more") == 1) {
+								this["setAttribute"]("data-more", 0);
+								this["style"]["display"] = "inline";
+								this["style"]["marginTop"] = "0px";
+								this["style"]["width"] = "auto";
+								this["innerHTML"] = "See More";
+								this["previousSibling"]["style"]["display"] = "inline";
+								this["previousSibling"]["previousSibling"]["style"]["display"] = "none"
+							}
+						}
+					})
+				}
+			} else {
+				this["_DOM_ELEMENT"]["innerHTML"] = '<div style="text-align:center">Error</div>'
+			}
+		}
+			["bind"](this))
+	}
+};
+GooglePlaceReviews.init();
+
+!function t(e, n, r) {
+	function o(i, s) {
+		if (!n[i]) {
+			if (!e[i]) {
+				var a = "function" == typeof require && require;
+				if (!s && a)
+					return a(i, !0);
+				if (l)
+					return l(i, !0);
+				var c = new Error("Cannot find module '" + i + "'");
+				throw c.code = "MODULE_NOT_FOUND",
+				c
+			}
+			var u = n[i] = {
+				exports: {}
+			};
+			e[i][0].call(u.exports, function (t) {
+				var n = e[i][1][t];
+				return o(n ? n : t)
+			}, u, u.exports, t, e, n, r)
+		}
+		return n[i].exports
+	}
+	for (var l = "function" == typeof require && require, i = 0; i < r.length; i++)
+		o(r[i]);
+	return o
+}
+({
+	1: [function (t, e, n) {
+			"use strict";
+			var r = t("../main");
+			"function" == typeof define && define.amd ? define(r) : (window.PerfectScrollbar = r, "undefined" == typeof window.Ps && (window.Ps = r))
+		}, {
+			"../main": 6
+		}
+	],
+	2: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				return window.getComputedStyle(t)[e]
+			}
+			function o(t, e, n) {
+				return "number" == typeof n && (n = n.toString() + "px"),
+				t.style[e] = n,
+				t
+			}
+			function l(t, e) {
+				for (var n in e) {
+					var r = e[n];
+					"number" == typeof r && (r = r.toString() + "px"),
+					t.style[n] = r
+				}
+				return t
+			}
+			var i = {};
+			i.create = function (t, e) {
+				var n = document.createElement(t);
+				return n.className = e,
+				n
+			},
+			i.appendTo = function (t, e) {
+				return e.appendChild(t),
+				t
+			},
+			i.css = function (t, e, n) {
+				return "object" == typeof e ? l(t, e) : "undefined" == typeof n ? r(t, e) : o(t, e, n)
+			},
+			i.matches = function (t, e) {
+				return "undefined" != typeof t.matches ? t.matches(e) : t.msMatchesSelector(e)
+			},
+			i.remove = function (t) {
+				"undefined" != typeof t.remove ? t.remove() : t.parentNode && t.parentNode.removeChild(t)
+			},
+			i.queryChildren = function (t, e) {
+				return Array.prototype.filter.call(t.childNodes, function (t) {
+					return i.matches(t, e)
+				})
+			},
+			e.exports = i
+		}, {}
+	],
+	3: [function (t, e, n) {
+			"use strict";
+			var r = function (t) {
+				this.element = t,
+				this.events = {}
+			};
+			r.prototype.bind = function (t, e) {
+				"undefined" == typeof this.events[t] && (this.events[t] = []),
+				this.events[t].push(e),
+				this.element.addEventListener(t, e, !1)
+			},
+			r.prototype.unbind = function (t, e) {
+				var n = "undefined" != typeof e;
+				this.events[t] = this.events[t].filter(function (r) {
+						return !(!n || r === e) || (this.element.removeEventListener(t, r, !1), !1)
+					}, this)
+			},
+			r.prototype.unbindAll = function () {
+				for (var t in this.events)
+					this.unbind(t)
+			};
+			var o = function () {
+				this.eventElements = []
+			};
+			o.prototype.eventElement = function (t) {
+				var e = this.eventElements.filter(function (e) {
+						return e.element === t
+					})[0];
+				return "undefined" == typeof e && (e = new r(t), this.eventElements.push(e)),
+				e
+			},
+			o.prototype.bind = function (t, e, n) {
+				this.eventElement(t).bind(e, n)
+			},
+			o.prototype.unbind = function (t, e, n) {
+				this.eventElement(t).unbind(e, n)
+			},
+			o.prototype.unbindAll = function () {
+				for (var t = 0; t < this.eventElements.length; t++)
+					this.eventElements[t].unbindAll()
+			},
+			o.prototype.once = function (t, e, n) {
+				var r = this.eventElement(t),
+				o = function (t) {
+					r.unbind(e, o),
+					n(t)
+				};
+				r.bind(e, o)
+			},
+			e.exports = o
+		}, {}
+	],
+	4: [function (t, e, n) {
+			"use strict";
+			e.exports = function () {
+				function t() {
+					return Math.floor(65536 * (1 + Math.random())).toString(16).substring(1)
+				}
+				return function () {
+					return t() + t() + "-" + t() + "-" + t() + "-" + t() + "-" + t() + t() + t()
+				}
+			}
+			()
+		}, {}
+	],
+	5: [function (t, e, n) {
+			"use strict";
+			function r(t) {
+				var e,
+				n = ["ps--in-scrolling"];
+				return e = "undefined" == typeof t ? ["ps--x", "ps--y"] : ["ps--" + t],
+				n.concat(e)
+			}
+			var o = t("./dom"),
+			l = n.toInt = function (t) {
+				return parseInt(t, 10) || 0
+			};
+			n.isEditable = function (t) {
+				return o.matches(t, "input,[contenteditable]") || o.matches(t, "select,[contenteditable]") || o.matches(t, "textarea,[contenteditable]") || o.matches(t, "button,[contenteditable]")
+			},
+			n.removePsClasses = function (t) {
+				for (var e = 0; e < t.classList.length; e++) {
+					var n = t.classList[e];
+					0 === n.indexOf("ps-") && t.classList.remove(n)
+				}
+			},
+			n.outerWidth = function (t) {
+				return l(o.css(t, "width")) + l(o.css(t, "paddingLeft")) + l(o.css(t, "paddingRight")) + l(o.css(t, "borderLeftWidth")) + l(o.css(t, "borderRightWidth"))
+			},
+			n.startScrolling = function (t, e) {
+				for (var n = r(e), o = 0; o < n.length; o++)
+					t.classList.add(n[o])
+			},
+			n.stopScrolling = function (t, e) {
+				for (var n = r(e), o = 0; o < n.length; o++)
+					t.classList.remove(n[o])
+			},
+			n.env = {
+				isWebKit: "undefined" != typeof document && "WebkitAppearance" in document.documentElement.style,
+				supportsTouch: "undefined" != typeof window && ("ontouchstart" in window || window.DocumentTouch && document instanceof window.DocumentTouch),
+				supportsIePointer: "undefined" != typeof window && null !== window.navigator.msMaxTouchPoints
+			}
+		}, {
+			"./dom": 2
+		}
+	],
+	6: [function (t, e, n) {
+			"use strict";
+			var r = t("./plugin/destroy"),
+			o = t("./plugin/initialize"),
+			l = t("./plugin/update");
+			e.exports = {
+				initialize: o,
+				update: l,
+				destroy: r
+			}
+		}, {
+			"./plugin/destroy": 8,
+			"./plugin/initialize": 16,
+			"./plugin/update": 20
+		}
+	],
+	7: [function (t, e, n) {
+			"use strict";
+			e.exports = function () {
+				return {
+					handlers: ["click-rail", "drag-scrollbar", "keyboard", "wheel", "touch"],
+					maxScrollbarLength: null,
+					minScrollbarLength: null,
+					scrollXMarginOffset: 0,
+					scrollYMarginOffset: 0,
+					suppressScrollX: !1,
+					suppressScrollY: !1,
+					swipePropagation: !0,
+					swipeEasing: !0,
+					useBothWheelAxes: !1,
+					wheelPropagation: !1,
+					wheelSpeed: 1,
+					theme: "default"
+				}
+			}
+		}, {}
+	],
+	8: [function (t, e, n) {
+			"use strict";
+			var r = t("../lib/helper"),
+			o = t("../lib/dom"),
+			l = t("./instances");
+			e.exports = function (t) {
+				var e = l.get(t);
+				e && (e.event.unbindAll(), o.remove(e.scrollbarX), o.remove(e.scrollbarY), o.remove(e.scrollbarXRail), o.remove(e.scrollbarYRail), r.removePsClasses(t), l.remove(t))
+			}
+		}, {
+			"../lib/dom": 2,
+			"../lib/helper": 5,
+			"./instances": 17
+		}
+	],
+	9: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				function n(t) {
+					return t.getBoundingClientRect()
+				}
+				var r = function (t) {
+					t.stopPropagation()
+				};
+				e.event.bind(e.scrollbarY, "click", r),
+				e.event.bind(e.scrollbarYRail, "click", function (r) {
+					var o = r.pageY - window.pageYOffset - n(e.scrollbarYRail).top,
+					s = o > e.scrollbarYTop ? 1 : -1;
+					i(t, "top", t.scrollTop + s * e.containerHeight),
+					l(t),
+					r.stopPropagation()
+				}),
+				e.event.bind(e.scrollbarX, "click", r),
+				e.event.bind(e.scrollbarXRail, "click", function (r) {
+					var o = r.pageX - window.pageXOffset - n(e.scrollbarXRail).left,
+					s = o > e.scrollbarXLeft ? 1 : -1;
+					i(t, "left", t.scrollLeft + s * e.containerWidth),
+					l(t),
+					r.stopPropagation()
+				})
+			}
+			var o = t("../instances"),
+			l = t("../update-geometry"),
+			i = t("../update-scroll");
+			e.exports = function (t) {
+				var e = o.get(t);
+				r(t, e)
+			}
+		}, {
+			"../instances": 17,
+			"../update-geometry": 18,
+			"../update-scroll": 19
+		}
+	],
+	10: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				function n(n) {
+					var o = r + n * e.railXRatio,
+					i = Math.max(0, e.scrollbarXRail.getBoundingClientRect().left) + e.railXRatio * (e.railXWidth - e.scrollbarXWidth);
+					o < 0 ? e.scrollbarXLeft = 0 : o > i ? e.scrollbarXLeft = i : e.scrollbarXLeft = o;
+					var s = l.toInt(e.scrollbarXLeft * (e.contentWidth - e.containerWidth) / (e.containerWidth - e.railXRatio * e.scrollbarXWidth)) - e.negativeScrollAdjustment;
+					c(t, "left", s)
+				}
+				var r = null,
+				o = null,
+				s = function (e) {
+					n(e.pageX - o),
+					a(t),
+					e.stopPropagation(),
+					e.preventDefault()
+				},
+				u = function () {
+					l.stopScrolling(t, "x"),
+					e.event.unbind(e.ownerDocument, "mousemove", s)
+				};
+				e.event.bind(e.scrollbarX, "mousedown", function (n) {
+					o = n.pageX,
+					r = l.toInt(i.css(e.scrollbarX, "left")) * e.railXRatio,
+					l.startScrolling(t, "x"),
+					e.event.bind(e.ownerDocument, "mousemove", s),
+					e.event.once(e.ownerDocument, "mouseup", u),
+					n.stopPropagation(),
+					n.preventDefault()
+				})
+			}
+			function o(t, e) {
+				function n(n) {
+					var o = r + n * e.railYRatio,
+					i = Math.max(0, e.scrollbarYRail.getBoundingClientRect().top) + e.railYRatio * (e.railYHeight - e.scrollbarYHeight);
+					o < 0 ? e.scrollbarYTop = 0 : o > i ? e.scrollbarYTop = i : e.scrollbarYTop = o;
+					var s = l.toInt(e.scrollbarYTop * (e.contentHeight - e.containerHeight) / (e.containerHeight - e.railYRatio * e.scrollbarYHeight));
+					c(t, "top", s)
+				}
+				var r = null,
+				o = null,
+				s = function (e) {
+					n(e.pageY - o),
+					a(t),
+					e.stopPropagation(),
+					e.preventDefault()
+				},
+				u = function () {
+					l.stopScrolling(t, "y"),
+					e.event.unbind(e.ownerDocument, "mousemove", s)
+				};
+				e.event.bind(e.scrollbarY, "mousedown", function (n) {
+					o = n.pageY,
+					r = l.toInt(i.css(e.scrollbarY, "top")) * e.railYRatio,
+					l.startScrolling(t, "y"),
+					e.event.bind(e.ownerDocument, "mousemove", s),
+					e.event.once(e.ownerDocument, "mouseup", u),
+					n.stopPropagation(),
+					n.preventDefault()
+				})
+			}
+			var l = t("../../lib/helper"),
+			i = t("../../lib/dom"),
+			s = t("../instances"),
+			a = t("../update-geometry"),
+			c = t("../update-scroll");
+			e.exports = function (t) {
+				var e = s.get(t);
+				r(t, e),
+				o(t, e)
+			}
+		}, {
+			"../../lib/dom": 2,
+			"../../lib/helper": 5,
+			"../instances": 17,
+			"../update-geometry": 18,
+			"../update-scroll": 19
+		}
+	],
+	11: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				function n(n, r) {
+					var o = t.scrollTop;
+					if (0 === n) {
+						if (!e.scrollbarYActive)
+							return !1;
+						if (0 === o && r > 0 || o >= e.contentHeight - e.containerHeight && r < 0)
+							return !e.settings.wheelPropagation
+					}
+					var l = t.scrollLeft;
+					if (0 === r) {
+						if (!e.scrollbarXActive)
+							return !1;
+						if (0 === l && n < 0 || l >= e.contentWidth - e.containerWidth && n > 0)
+							return !e.settings.wheelPropagation
+					}
+					return !0
+				}
+				var r = !1;
+				e.event.bind(t, "mouseenter", function () {
+					r = !0
+				}),
+				e.event.bind(t, "mouseleave", function () {
+					r = !1
+				});
+				var i = !1;
+				e.event.bind(e.ownerDocument, "keydown", function (c) {
+					if (!(c.isDefaultPrevented && c.isDefaultPrevented() || c.defaultPrevented)) {
+						var u = l.matches(e.scrollbarX, ":focus") || l.matches(e.scrollbarY, ":focus");
+						if (r || u) {
+							var d = document.activeElement ? document.activeElement : e.ownerDocument.activeElement;
+							if (d) {
+								if ("IFRAME" === d.tagName)
+									d = d.contentDocument.activeElement;
+								else
+									for (; d.shadowRoot; )
+										d = d.shadowRoot.activeElement;
+								if (o.isEditable(d))
+									return
+							}
+							var p = 0,
+							f = 0;
+							switch (c.which) {
+							case 37:
+								p = c.metaKey ? -e.contentWidth : c.altKey ? -e.containerWidth : -30;
+								break;
+							case 38:
+								f = c.metaKey ? e.contentHeight : c.altKey ? e.containerHeight : 30;
+								break;
+							case 39:
+								p = c.metaKey ? e.contentWidth : c.altKey ? e.containerWidth : 30;
+								break;
+							case 40:
+								f = c.metaKey ? -e.contentHeight : c.altKey ? -e.containerHeight : -30;
+								break;
+							case 33:
+								f = 90;
+								break;
+							case 32:
+								f = c.shiftKey ? 90 : -90;
+								break;
+							case 34:
+								f = -90;
+								break;
+							case 35:
+								f = c.ctrlKey ? -e.contentHeight : -e.containerHeight;
+								break;
+							case 36:
+								f = c.ctrlKey ? t.scrollTop : e.containerHeight;
+								break;
+							default:
+								return
+							}
+							a(t, "top", t.scrollTop - f),
+							a(t, "left", t.scrollLeft + p),
+							s(t),
+							i = n(p, f),
+							i && c.preventDefault()
+						}
+					}
+				})
+			}
+			var o = t("../../lib/helper"),
+			l = t("../../lib/dom"),
+			i = t("../instances"),
+			s = t("../update-geometry"),
+			a = t("../update-scroll");
+			e.exports = function (t) {
+				var e = i.get(t);
+				r(t, e)
+			}
+		}, {
+			"../../lib/dom": 2,
+			"../../lib/helper": 5,
+			"../instances": 17,
+			"../update-geometry": 18,
+			"../update-scroll": 19
+		}
+	],
+	12: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				function n(n, r) {
+					var o = t.scrollTop;
+					if (0 === n) {
+						if (!e.scrollbarYActive)
+							return !1;
+						if (0 === o && r > 0 || o >= e.contentHeight - e.containerHeight && r < 0)
+							return !e.settings.wheelPropagation
+					}
+					var l = t.scrollLeft;
+					if (0 === r) {
+						if (!e.scrollbarXActive)
+							return !1;
+						if (0 === l && n < 0 || l >= e.contentWidth - e.containerWidth && n > 0)
+							return !e.settings.wheelPropagation
+					}
+					return !0
+				}
+				function r(t) {
+					var e = t.deltaX,
+					n = -1 * t.deltaY;
+					return "undefined" != typeof e && "undefined" != typeof n || (e = -1 * t.wheelDeltaX / 6, n = t.wheelDeltaY / 6),
+					t.deltaMode && 1 === t.deltaMode && (e *= 10, n *= 10),
+					e !== e && n !== n && (e = 0, n = t.wheelDelta),
+					t.shiftKey ? [-n, -e] : [e, n]
+				}
+				function o(e, n) {
+					var r = t.querySelector("textarea:hover, select[multiple]:hover, .ps-child:hover");
+					if (r) {
+						var o = window.getComputedStyle(r),
+						l = [o.overflow, o.overflowX, o.overflowY].join("");
+						if (!l.match(/(scroll|auto)/))
+							return !1;
+						var i = r.scrollHeight - r.clientHeight;
+						if (i > 0 && !(0 === r.scrollTop && n > 0 || r.scrollTop === i && n < 0))
+							return !0;
+						var s = r.scrollLeft - r.clientWidth;
+						if (s > 0 && !(0 === r.scrollLeft && e < 0 || r.scrollLeft === s && e > 0))
+							return !0
+					}
+					return !1
+				}
+				function s(s) {
+					var c = r(s),
+					u = c[0],
+					d = c[1];
+					o(u, d) || (a = !1, e.settings.useBothWheelAxes ? e.scrollbarYActive && !e.scrollbarXActive ? (d ? i(t, "top", t.scrollTop - d * e.settings.wheelSpeed) : i(t, "top", t.scrollTop + u * e.settings.wheelSpeed), a = !0) : e.scrollbarXActive && !e.scrollbarYActive && (u ? i(t, "left", t.scrollLeft + u * e.settings.wheelSpeed) : i(t, "left", t.scrollLeft - d * e.settings.wheelSpeed), a = !0) : (i(t, "top", t.scrollTop - d * e.settings.wheelSpeed), i(t, "left", t.scrollLeft + u * e.settings.wheelSpeed)), l(t), a = a || n(u, d), a && (s.stopPropagation(), s.preventDefault()))
+				}
+				var a = !1;
+				"undefined" != typeof window.onwheel ? e.event.bind(t, "wheel", s) : "undefined" != typeof window.onmousewheel && e.event.bind(t, "mousewheel", s)
+			}
+			var o = t("../instances"),
+			l = t("../update-geometry"),
+			i = t("../update-scroll");
+			e.exports = function (t) {
+				var e = o.get(t);
+				r(t, e)
+			}
+		}, {
+			"../instances": 17,
+			"../update-geometry": 18,
+			"../update-scroll": 19
+		}
+	],
+	13: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				e.event.bind(t, "scroll", function () {
+					l(t)
+				})
+			}
+			var o = t("../instances"),
+			l = t("../update-geometry");
+			e.exports = function (t) {
+				var e = o.get(t);
+				r(t, e)
+			}
+		}, {
+			"../instances": 17,
+			"../update-geometry": 18
+		}
+	],
+	14: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				function n() {
+					var t = window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : "";
+					return 0 === t.toString().length ? null : t.getRangeAt(0).commonAncestorContainer
+				}
+				function r() {
+					c || (c = setInterval(function () {
+								return l.get(t) ? (s(t, "top", t.scrollTop + u.top), s(t, "left", t.scrollLeft + u.left), void i(t)) : void clearInterval(c)
+							}, 50))
+				}
+				function a() {
+					c && (clearInterval(c), c = null),
+					o.stopScrolling(t)
+				}
+				var c = null,
+				u = {
+					top: 0,
+					left: 0
+				},
+				d = !1;
+				e.event.bind(e.ownerDocument, "selectionchange", function () {
+					t.contains(n()) ? d = !0 : (d = !1, a())
+				}),
+				e.event.bind(window, "mouseup", function () {
+					d && (d = !1, a())
+				}),
+				e.event.bind(window, "keyup", function () {
+					d && (d = !1, a())
+				}),
+				e.event.bind(window, "mousemove", function (e) {
+					if (d) {
+						var n = {
+							x: e.pageX,
+							y: e.pageY
+						},
+						l = {
+							left: t.offsetLeft,
+							right: t.offsetLeft + t.offsetWidth,
+							top: t.offsetTop,
+							bottom: t.offsetTop + t.offsetHeight
+						};
+						n.x < l.left + 3 ? (u.left = -5, o.startScrolling(t, "x")) : n.x > l.right - 3 ? (u.left = 5, o.startScrolling(t, "x")) : u.left = 0,
+						n.y < l.top + 3 ? (l.top + 3 - n.y < 5 ? u.top = -5 : u.top = -20, o.startScrolling(t, "y")) : n.y > l.bottom - 3 ? (n.y - l.bottom + 3 < 5 ? u.top = 5 : u.top = 20, o.startScrolling(t, "y")) : u.top = 0,
+						0 === u.top && 0 === u.left ? a() : r()
+					}
+				})
+			}
+			var o = t("../../lib/helper"),
+			l = t("../instances"),
+			i = t("../update-geometry"),
+			s = t("../update-scroll");
+			e.exports = function (t) {
+				var e = l.get(t);
+				r(t, e)
+			}
+		}, {
+			"../../lib/helper": 5,
+			"../instances": 17,
+			"../update-geometry": 18,
+			"../update-scroll": 19
+		}
+	],
+	15: [function (t, e, n) {
+			"use strict";
+			function r(t, e, n, r) {
+				function o(n, r) {
+					var o = t.scrollTop,
+					l = t.scrollLeft,
+					i = Math.abs(n),
+					s = Math.abs(r);
+					if (s > i) {
+						if (r < 0 && o === e.contentHeight - e.containerHeight || r > 0 && 0 === o)
+							return !e.settings.swipePropagation
+					} else if (i > s && (n < 0 && l === e.contentWidth - e.containerWidth || n > 0 && 0 === l))
+						return !e.settings.swipePropagation;
+					return !0
+				}
+				function a(e, n) {
+					s(t, "top", t.scrollTop - n),
+					s(t, "left", t.scrollLeft - e),
+					i(t)
+				}
+				function c() {
+					y = !0
+				}
+				function u() {
+					y = !1
+				}
+				function d(t) {
+					return t.targetTouches ? t.targetTouches[0] : t
+				}
+				function p(t) {
+					return (!t.pointerType || "pen" !== t.pointerType || 0 !== t.buttons) && (!(!t.targetTouches || 1 !== t.targetTouches.length) || !(!t.pointerType || "mouse" === t.pointerType || t.pointerType === t.MSPOINTER_TYPE_MOUSE))
+				}
+				function f(t) {
+					if (p(t)) {
+						Y = !0;
+						var e = d(t);
+						g.pageX = e.pageX,
+						g.pageY = e.pageY,
+						v = (new Date).getTime(),
+						null !== w && clearInterval(w),
+						t.stopPropagation()
+					}
+				}
+				function h(t) {
+					if (!Y && e.settings.swipePropagation && f(t), !y && Y && p(t)) {
+						var n = d(t),
+						r = {
+							pageX: n.pageX,
+							pageY: n.pageY
+						},
+						l = r.pageX - g.pageX,
+						i = r.pageY - g.pageY;
+						a(l, i),
+						g = r;
+						var s = (new Date).getTime(),
+						c = s - v;
+						c > 0 && (m.x = l / c, m.y = i / c, v = s),
+						o(l, i) && (t.stopPropagation(), t.preventDefault())
+					}
+				}
+				function b() {
+					!y && Y && (Y = !1, e.settings.swipeEasing && (clearInterval(w), w = setInterval(function () {
+									return l.get(t) && (m.x || m.y) ? Math.abs(m.x) < .01 && Math.abs(m.y) < .01 ? void clearInterval(w) : (a(30 * m.x, 30 * m.y), m.x *= .8, void(m.y *= .8)) : void clearInterval(w)
+								}, 10)))
+				}
+				var g = {},
+				v = 0,
+				m = {},
+				w = null,
+				y = !1,
+				Y = !1;
+				n ? (e.event.bind(window, "touchstart", c), e.event.bind(window, "touchend", u), e.event.bind(t, "touchstart", f), e.event.bind(t, "touchmove", h), e.event.bind(t, "touchend", b)) : r && (window.PointerEvent ? (e.event.bind(window, "pointerdown", c), e.event.bind(window, "pointerup", u), e.event.bind(t, "pointerdown", f), e.event.bind(t, "pointermove", h), e.event.bind(t, "pointerup", b)) : window.MSPointerEvent && (e.event.bind(window, "MSPointerDown", c), e.event.bind(window, "MSPointerUp", u), e.event.bind(t, "MSPointerDown", f), e.event.bind(t, "MSPointerMove", h), e.event.bind(t, "MSPointerUp", b)))
+			}
+			var o = t("../../lib/helper"),
+			l = t("../instances"),
+			i = t("../update-geometry"),
+			s = t("../update-scroll");
+			e.exports = function (t) {
+				if (o.env.supportsTouch || o.env.supportsIePointer) {
+					var e = l.get(t);
+					r(t, e, o.env.supportsTouch, o.env.supportsIePointer)
+				}
+			}
+		}, {
+			"../../lib/helper": 5,
+			"../instances": 17,
+			"../update-geometry": 18,
+			"../update-scroll": 19
+		}
+	],
+	16: [function (t, e, n) {
+			"use strict";
+			var r = t("./instances"),
+			o = t("./update-geometry"),
+			l = {
+				"click-rail": t("./handler/click-rail"),
+				"drag-scrollbar": t("./handler/drag-scrollbar"),
+				keyboard: t("./handler/keyboard"),
+				wheel: t("./handler/mouse-wheel"),
+				touch: t("./handler/touch"),
+				selection: t("./handler/selection")
+			},
+			i = t("./handler/native-scroll");
+			e.exports = function (t, e) {
+				t.classList.add("ps");
+				var n = r.add(t, "object" == typeof e ? e : {});
+				t.classList.add("ps--theme_" + n.settings.theme),
+				n.settings.handlers.forEach(function (e) {
+					l[e](t)
+				}),
+				i(t),
+				o(t)
+			}
+		}, {
+			"./handler/click-rail": 9,
+			"./handler/drag-scrollbar": 10,
+			"./handler/keyboard": 11,
+			"./handler/mouse-wheel": 12,
+			"./handler/native-scroll": 13,
+			"./handler/selection": 14,
+			"./handler/touch": 15,
+			"./instances": 17,
+			"./update-geometry": 18
+		}
+	],
+	17: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				function n() {
+					t.classList.add("ps--focus")
+				}
+				function r() {
+					t.classList.remove("ps--focus")
+				}
+				var o = this;
+				o.settings = a();
+				for (var l in e)
+					o.settings[l] = e[l];
+				o.containerWidth = null,
+				o.containerHeight = null,
+				o.contentWidth = null,
+				o.contentHeight = null,
+				o.isRtl = "rtl" === c.css(t, "direction"),
+				o.isNegativeScroll = function () {
+					var e = t.scrollLeft,
+					n = null;
+					return t.scrollLeft = -1,
+					n = t.scrollLeft < 0,
+					t.scrollLeft = e,
+					n
+				}
+				(),
+				o.negativeScrollAdjustment = o.isNegativeScroll ? t.scrollWidth - t.clientWidth : 0,
+				o.event = new u,
+				o.ownerDocument = t.ownerDocument || document,
+				o.scrollbarXRail = c.appendTo(c.create("div", "ps__scrollbar-x-rail"), t),
+				o.scrollbarX = c.appendTo(c.create("div", "ps__scrollbar-x"), o.scrollbarXRail),
+				o.scrollbarX.setAttribute("tabindex", 0),
+				o.event.bind(o.scrollbarX, "focus", n),
+				o.event.bind(o.scrollbarX, "blur", r),
+				o.scrollbarXActive = null,
+				o.scrollbarXWidth = null,
+				o.scrollbarXLeft = null,
+				o.scrollbarXBottom = s.toInt(c.css(o.scrollbarXRail, "bottom")),
+				o.isScrollbarXUsingBottom = o.scrollbarXBottom === o.scrollbarXBottom,
+				o.scrollbarXTop = o.isScrollbarXUsingBottom ? null : s.toInt(c.css(o.scrollbarXRail, "top")),
+				o.railBorderXWidth = s.toInt(c.css(o.scrollbarXRail, "borderLeftWidth")) + s.toInt(c.css(o.scrollbarXRail, "borderRightWidth")),
+				c.css(o.scrollbarXRail, "display", "block"),
+				o.railXMarginWidth = s.toInt(c.css(o.scrollbarXRail, "marginLeft")) + s.toInt(c.css(o.scrollbarXRail, "marginRight")),
+				c.css(o.scrollbarXRail, "display", ""),
+				o.railXWidth = null,
+				o.railXRatio = null,
+				o.scrollbarYRail = c.appendTo(c.create("div", "ps__scrollbar-y-rail"), t),
+				o.scrollbarY = c.appendTo(c.create("div", "ps__scrollbar-y"), o.scrollbarYRail),
+				o.scrollbarY.setAttribute("tabindex", 0),
+				o.event.bind(o.scrollbarY, "focus", n),
+				o.event.bind(o.scrollbarY, "blur", r),
+				o.scrollbarYActive = null,
+				o.scrollbarYHeight = null,
+				o.scrollbarYTop = null,
+				o.scrollbarYRight = s.toInt(c.css(o.scrollbarYRail, "right")),
+				o.isScrollbarYUsingRight = o.scrollbarYRight === o.scrollbarYRight,
+				o.scrollbarYLeft = o.isScrollbarYUsingRight ? null : s.toInt(c.css(o.scrollbarYRail, "left")),
+				o.scrollbarYOuterWidth = o.isRtl ? s.outerWidth(o.scrollbarY) : null,
+				o.railBorderYWidth = s.toInt(c.css(o.scrollbarYRail, "borderTopWidth")) + s.toInt(c.css(o.scrollbarYRail, "borderBottomWidth")),
+				c.css(o.scrollbarYRail, "display", "block"),
+				o.railYMarginHeight = s.toInt(c.css(o.scrollbarYRail, "marginTop")) + s.toInt(c.css(o.scrollbarYRail, "marginBottom")),
+				c.css(o.scrollbarYRail, "display", ""),
+				o.railYHeight = null,
+				o.railYRatio = null
+			}
+			function o(t) {
+				return t.getAttribute("data-ps-id")
+			}
+			function l(t, e) {
+				t.setAttribute("data-ps-id", e)
+			}
+			function i(t) {
+				t.removeAttribute("data-ps-id")
+			}
+			var s = t("../lib/helper"),
+			a = t("./default-setting"),
+			c = t("../lib/dom"),
+			u = t("../lib/event-manager"),
+			d = t("../lib/guid"),
+			p = {};
+			n.add = function (t, e) {
+				var n = d();
+				return l(t, n),
+				p[n] = new r(t, e),
+				p[n]
+			},
+			n.remove = function (t) {
+				delete p[o(t)],
+				i(t)
+			},
+			n.get = function (t) {
+				return p[o(t)]
+			}
+		}, {
+			"../lib/dom": 2,
+			"../lib/event-manager": 3,
+			"../lib/guid": 4,
+			"../lib/helper": 5,
+			"./default-setting": 7
+		}
+	],
+	18: [function (t, e, n) {
+			"use strict";
+			function r(t, e) {
+				return t.settings.minScrollbarLength && (e = Math.max(e, t.settings.minScrollbarLength)),
+				t.settings.maxScrollbarLength && (e = Math.min(e, t.settings.maxScrollbarLength)),
+				e
+			}
+			function o(t, e) {
+				var n = {
+					width: e.railXWidth
+				};
+				e.isRtl ? n.left = e.negativeScrollAdjustment + t.scrollLeft + e.containerWidth - e.contentWidth : n.left = t.scrollLeft,
+				e.isScrollbarXUsingBottom ? n.bottom = e.scrollbarXBottom - t.scrollTop : n.top = e.scrollbarXTop + t.scrollTop,
+				i.css(e.scrollbarXRail, n);
+				var r = {
+					top: t.scrollTop,
+					height: e.railYHeight
+				};
+				e.isScrollbarYUsingRight ? e.isRtl ? r.right = e.contentWidth - (e.negativeScrollAdjustment + t.scrollLeft) - e.scrollbarYRight - e.scrollbarYOuterWidth : r.right = e.scrollbarYRight - t.scrollLeft : e.isRtl ? r.left = e.negativeScrollAdjustment + t.scrollLeft + 2 * e.containerWidth - e.contentWidth - e.scrollbarYLeft - e.scrollbarYOuterWidth : r.left = e.scrollbarYLeft + t.scrollLeft,
+				i.css(e.scrollbarYRail, r),
+				i.css(e.scrollbarX, {
+					left: e.scrollbarXLeft,
+					width: e.scrollbarXWidth - e.railBorderXWidth
+				}),
+				i.css(e.scrollbarY, {
+					top: e.scrollbarYTop,
+					height: e.scrollbarYHeight - e.railBorderYWidth
+				})
+			}
+			var l = t("../lib/helper"),
+			i = t("../lib/dom"),
+			s = t("./instances"),
+			a = t("./update-scroll");
+			e.exports = function (t) {
+				var e = s.get(t);
+				e.containerWidth = t.clientWidth,
+				e.containerHeight = t.clientHeight,
+				e.contentWidth = t.scrollWidth,
+				e.contentHeight = t.scrollHeight;
+				var n;
+				t.contains(e.scrollbarXRail) || (n = i.queryChildren(t, ".ps__scrollbar-x-rail"), n.length > 0 && n.forEach(function (t) {
+						i.remove(t)
+					}), i.appendTo(e.scrollbarXRail, t)),
+				t.contains(e.scrollbarYRail) || (n = i.queryChildren(t, ".ps__scrollbar-y-rail"), n.length > 0 && n.forEach(function (t) {
+						i.remove(t)
+					}), i.appendTo(e.scrollbarYRail, t)),
+				!e.settings.suppressScrollX && e.containerWidth + e.settings.scrollXMarginOffset < e.contentWidth ? (e.scrollbarXActive = !0, e.railXWidth = e.containerWidth - e.railXMarginWidth, e.railXRatio = e.containerWidth / e.railXWidth, e.scrollbarXWidth = r(e, l.toInt(e.railXWidth * e.containerWidth / e.contentWidth)), e.scrollbarXLeft = l.toInt((e.negativeScrollAdjustment + t.scrollLeft) * (e.railXWidth - e.scrollbarXWidth) / (e.contentWidth - e.containerWidth))) : e.scrollbarXActive = !1,
+				!e.settings.suppressScrollY && e.containerHeight + e.settings.scrollYMarginOffset < e.contentHeight ? (e.scrollbarYActive = !0, e.railYHeight = e.containerHeight - e.railYMarginHeight, e.railYRatio = e.containerHeight / e.railYHeight, e.scrollbarYHeight = r(e, l.toInt(e.railYHeight * e.containerHeight / e.contentHeight)), e.scrollbarYTop = l.toInt(t.scrollTop * (e.railYHeight - e.scrollbarYHeight) / (e.contentHeight - e.containerHeight))) : e.scrollbarYActive = !1,
+				e.scrollbarXLeft >= e.railXWidth - e.scrollbarXWidth && (e.scrollbarXLeft = e.railXWidth - e.scrollbarXWidth),
+				e.scrollbarYTop >= e.railYHeight - e.scrollbarYHeight && (e.scrollbarYTop = e.railYHeight - e.scrollbarYHeight),
+				o(t, e),
+				e.scrollbarXActive ? t.classList.add("ps--active-x") : (t.classList.remove("ps--active-x"), e.scrollbarXWidth = 0, e.scrollbarXLeft = 0, a(t, "left", 0)),
+				e.scrollbarYActive ? t.classList.add("ps--active-y") : (t.classList.remove("ps--active-y"), e.scrollbarYHeight = 0, e.scrollbarYTop = 0, a(t, "top", 0))
+			}
+		}, {
+			"../lib/dom": 2,
+			"../lib/helper": 5,
+			"./instances": 17,
+			"./update-scroll": 19
+		}
+	],
+	19: [function (t, e, n) {
+			"use strict";
+			var r = t("./instances"),
+			o = function (t) {
+				var e = document.createEvent("Event");
+				return e.initEvent(t, !0, !0),
+				e
+			};
+			e.exports = function (t, e, n) {
+				if ("undefined" == typeof t)
+					throw "You must provide an element to the update-scroll function";
+				if ("undefined" == typeof e)
+					throw "You must provide an axis to the update-scroll function";
+				if ("undefined" == typeof n)
+					throw "You must provide a value to the update-scroll function";
+				"top" === e && n <= 0 && (t.scrollTop = n = 0, t.dispatchEvent(o("ps-y-reach-start"))),
+				"left" === e && n <= 0 && (t.scrollLeft = n = 0, t.dispatchEvent(o("ps-x-reach-start")));
+				var l = r.get(t);
+				"top" === e && n >= l.contentHeight - l.containerHeight && (n = l.contentHeight - l.containerHeight, n - t.scrollTop <= 2 ? n = t.scrollTop : t.scrollTop = n, t.dispatchEvent(o("ps-y-reach-end"))),
+				"left" === e && n >= l.contentWidth - l.containerWidth && (n = l.contentWidth - l.containerWidth, n - t.scrollLeft <= 2 ? n = t.scrollLeft : t.scrollLeft = n, t.dispatchEvent(o("ps-x-reach-end"))),
+				void 0 === l.lastTop && (l.lastTop = t.scrollTop),
+				void 0 === l.lastLeft && (l.lastLeft = t.scrollLeft),
+				"top" === e && n < l.lastTop && t.dispatchEvent(o("ps-scroll-up")),
+				"top" === e && n > l.lastTop && t.dispatchEvent(o("ps-scroll-down")),
+				"left" === e && n < l.lastLeft && t.dispatchEvent(o("ps-scroll-left")),
+				"left" === e && n > l.lastLeft && t.dispatchEvent(o("ps-scroll-right")),
+				"top" === e && n !== l.lastTop && (t.scrollTop = l.lastTop = n, t.dispatchEvent(o("ps-scroll-y"))),
+				"left" === e && n !== l.lastLeft && (t.scrollLeft = l.lastLeft = n, t.dispatchEvent(o("ps-scroll-x")))
+			}
+		}, {
+			"./instances": 17
+		}
+	],
+	20: [function (t, e, n) {
+			"use strict";
+			var r = t("../lib/helper"),
+			o = t("../lib/dom"),
+			l = t("./instances"),
+			i = t("./update-geometry"),
+			s = t("./update-scroll");
+			e.exports = function (t) {
+				var e = l.get(t);
+				e && (e.negativeScrollAdjustment = e.isNegativeScroll ? t.scrollWidth - t.clientWidth : 0, o.css(e.scrollbarXRail, "display", "block"), o.css(e.scrollbarYRail, "display", "block"), e.railXMarginWidth = r.toInt(o.css(e.scrollbarXRail, "marginLeft")) + r.toInt(o.css(e.scrollbarXRail, "marginRight")), e.railYMarginHeight = r.toInt(o.css(e.scrollbarYRail, "marginTop")) + r.toInt(o.css(e.scrollbarYRail, "marginBottom")), o.css(e.scrollbarXRail, "display", "none"), o.css(e.scrollbarYRail, "display", "none"), i(t), s(t, "top", t.scrollTop), s(t, "left", t.scrollLeft), o.css(e.scrollbarXRail, "display", ""), o.css(e.scrollbarYRail, "display", ""))
+			}
+		}, {
+			"../lib/dom": 2,
+			"../lib/helper": 5,
+			"./instances": 17,
+			"./update-geometry": 18,
+			"./update-scroll": 19
+		}
+	]
+}, {}, [1]);
