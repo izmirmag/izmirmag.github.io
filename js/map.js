@@ -69,7 +69,7 @@ GooglePlaceReviewsInstance.prototype = {
 							a += '<div class="gpp-review-image"><img src="' + c.reviews[e]["profile_photo_url"] + '" /></div>';
 							a += '<div class="gpp-review-info">';
 							a += '<div class="gpp-review-username">' + c.reviews[e]["author_name"] + "</div>";
-							a += '<div class="gpp-review-user-rating-container"><div class="gpp-review-user-rating">5 üstünden ' + c.reviews[e]["rating"] + '</div><div class="gpp-review-user-rating-stars">' + GooglePlaceReviews.getStarsHTML(c.reviews[e]["rating"]) + "</div></div>";
+							a += '<div class="gpp-review-user-rating-container"><div class="gpp-review-user-rating-stars">' + GooglePlaceReviews.getStarsHTML(c.reviews[e]["rating"]) + "</div></div>";
 							a += '<div class="gpp-review-time">' + c.reviews[e]["relative_time_description"] + "</div>";
 							a += "</div>";
 							if ("text" in c.reviews[e]) {
