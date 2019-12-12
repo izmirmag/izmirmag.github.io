@@ -1,7 +1,7 @@
 var GooglePlaceReviews = {
 	star_full_svg: '<i class="fas fa-star"></i>',
 	star_half_svg: '<i class="fas fa-star-half-alt"></i>',
-	star_empty_svg: '<i class="fal fa-star"></i>',
+	star_empty_svg: '<i class="far fa-star"></i>',
 	location_svg: '<i class="fas fa-map-marker-check"></i>',
 	phone_svg: '<i class="fas fa-phone"></i>',
 	website_svg: '<i class="fas fa-map-marker-check"></i>',
