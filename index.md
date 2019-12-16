@@ -1,0 +1,1 @@
+izmirmag.net
