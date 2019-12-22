@@ -102,11 +102,7 @@ var it = '<div class="shad item"><div class="item-main">'+takvim+'<a href="' + i
 
 
 
-
-var ti = it.replace(/undefined/g," İzmir");
-
-
-$("#widget-content-Text1").append(ti);
+$("#widget-content-Text1").append(it);
 
   
     }
