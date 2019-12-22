@@ -83,7 +83,7 @@ if(a.feed.entry[i].link[ce].href == "http://o.com")
 	var lotest = p.split("//")[2];
 if ("georss$featurename" in a.feed.entry[i]) {
 var lo = "<loc>"+a.feed.entry[i].georss$featurename.$t+"</loc>";
-} else if(lotest !== null){lo = "<loc>"+p.split("//")[2]+"</loc>";} else{lo =""}
+} else if(lotest !== undefined){lo = "<loc>"+p.split("//")[2]+"</loc>";} else{lo =""}
 
 
 
