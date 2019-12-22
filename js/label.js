@@ -87,14 +87,17 @@ if(lo===undefined){var lo =" İzmir"}
 
 
 if ("media$thumbnail" in a.feed.entry[i]) {var rs = a.feed.entry[i].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s200")} 
-else {var rs = "https://1.bp.blogspot.com/-u5Z56Wg_wrc/Xf_dOlX-roI/AAAAAAAAUcs/k6FaEIHpeh4NrAIjJU8z7UkS-xf4fP1cACLcBGAsYHQ/s300/no.png"}
+else if (a.feed.entry[i].link[0].rel == "related") {
+rs = a.feed.entry[i].link[0].href;
+} else { rs = "https://1.bp.blogspot.com/-u5Z56Wg_wrc/Xf_dOlX-roI/AAAAAAAAUcs/k6FaEIHpeh4NrAIjJU8z7UkS-xf4fP1cACLcBGAsYHQ/s300/no.png"}
   
 var it22 = '<div class="shad item list-item box"><a href="' + ik + '" class="thumbnail item-thumbnail" style="height:100px"><span class="item-thumbnail-resize-portrait"><img src="' + rs.replace('s72-c','s1-c') + '" class="optimized"></span></a><div class="item-content"><h3 class="item-title"><a href="' + ik + '">' + ppl + pstt + '</a></h3><div class="meta-items"><a class="meta-item meta-item-date" href="' + ik + '"><i class="fa fa-calendar"></i> <span>' + dt + '</span></a><br><a class="meta-item meta-item-date"><loc>' + lo + '</loc></a>'+ikm+'</div><div class="theme bg item-labels">'+e+'<a href="/search/label/'+lo+'" id="thk" class="'+lo+'">'+lo+'</a><span></div><div class="item-sub" style="display:none"><p class="date">' + date + '</p><p class="title">' + pstt + '</p><p class="desc">'+ttsp+'</p><p class="like">'+ikm+'</p><p class="pop">' + ikh + '</p></div></div></div></div></div>';
 
+if (!e.toString().match("mekan")) {
+var takvim = '<div class="meta-items"><a class="meta-item meta-item-date" href="' + ik + '"><span>' + dt + '</span></a></div>';
+} else {takvim = ""}	
 
-
-
-var it = '<div class="shad item"><div class="item-main"><div class="meta-items"><a class="meta-item meta-item-date" href="' + ik + '"><span>' + dt + '</span></a></div><a href="' + ik + '" class="thumbnail item-thumbnail"><span class="item-thumbnail-resize-portrait"><img src="' + rs + '" class="optimized" style="bottom: 0px;"></span></a><div class="item-content"><div class="bg item-labels">'+e+'<a href="/search/label/'+lo+'" id="thk" class="'+lo+'">'+lo+'</a></div></div></div><div class="item-sub"><h3 class="item-title"><a href="' + ik + '">' + ppl + pstt + '</a></h3><loc>' + lo + '</loc><div style="clear:both">'+ikm+'</div></div></div>';
+var it = '<div class="shad item"><div class="item-main">'+takvim+'<a href="' + ik + '" class="thumbnail item-thumbnail"><span class="item-thumbnail-resize-portrait"><img src="' + rs + '" class="optimized" style="bottom: 0px;"></span></a><div class="item-content"><div class="bg item-labels">'+e+'<a href="/search/label/'+lo+'" id="thk" class="'+lo+'">'+lo+'</a></div></div></div><div class="item-sub"><h3 class="item-title"><a href="' + ik + '">' + ppl + pstt + '</a></h3><loc>' + lo + '</loc><div style="clear:both">'+ikm+'</div></div></div>';
 
 
 
