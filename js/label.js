@@ -86,7 +86,7 @@ if(lo===undefined){var lo =" İzmir"}
 
 
 
-if ("media$thumbnail" in a.feed.entry[i]) {var rs = a.feed.entry[i].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s200")} 
+if ("media$thumbnail" in a.feed.entry[i]) {var rs = a.feed.entry[i].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s1")} 
 else if (a.feed.entry[i].link[0].rel == "related") {
 rs = a.feed.entry[i].link[0].href;
 } else { rs = "https://1.bp.blogspot.com/-u5Z56Wg_wrc/Xf_dOlX-roI/AAAAAAAAUcs/k6FaEIHpeh4NrAIjJU8z7UkS-xf4fP1cACLcBGAsYHQ/s300/no.png"}
