@@ -1,7 +1,7 @@
 var labe = $(".archive-page-header h2#basi").text();
 
 $.ajax({
-    url: 'https://izmirmag.net/feeds/posts/summary?q='+labe+'&max-results=150&alt=json-in-script',
+    url: 'https://izmirmag.net/feeds/posts/summary?q='+labe+'&max-results=9990&alt=json-in-script',
     type: 'get',
     dataType: "jsonp",
     success: function(a){
@@ -101,6 +101,7 @@ var it = '<div class="shad item"><div class="item-main"><div class="meta-items">
 
 var ti = it.replace(/undefined/g," İzmir");
 
+$("#widget-content-Text1").html("");
 $("#widget-content-Text1").append(ti);
 
   
