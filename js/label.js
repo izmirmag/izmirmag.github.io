@@ -112,4 +112,8 @@ $("#widget-content-Text1").append(ti);
 	    
 	}
 
-});
+}).done(function() {
+optimize_thumbnail();
+  });
+
+
