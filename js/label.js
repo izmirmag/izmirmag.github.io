@@ -1,15 +1,8 @@
-
-
-$(".jplist-drop-down").click(function() {
-$(".jplist-reset-btn").show();
-});
-
-$(".jplist-reset-btn").click(function() {
-$(".jplist-reset-btn").hide();
-});
-
-
-function mi(a) {
+$.ajax({
+    url: 'https://izmirmag.net/feeds/posts/summary/-/konser?max-results=55&alt=json-in-script',
+    type: 'get',
+    dataType: "jsonp",
+    success: function(a){
 
 for (var i = a.feed.entry.length - 1; i+1 > 0; i--) {
         for (var j = 0; j < a.feed.entry[i].link.length; j++) {
@@ -105,13 +98,5 @@ $("#widget-content-Text1").append(ti);
 
   
     }
-}
-   var km = new Date();
-   var em = ["01","02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-   var rm = ["00", "01", "02", "03", "04", "05", "06", "07", "08","09","10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
-   var gm = rm[km.getDate()];
-   var am = em[km.getMonth()];
-   var ym = km.getFullYear();
-   var pm = ym + "-" + am + "-" + gm;
-
-document.write('<script type="text/javascript" src="/feeds/posts/summary/-/konser?max-results=550&published-min='+pm+'T00:00:00&alt=json-in-script&callback=mi"><\/script>');
+	}
+});
