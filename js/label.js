@@ -101,10 +101,11 @@ var it = '<div class="shad item"><div class="item-main"><div class="meta-items">
 
 var ti = it.replace(/undefined/g," İzmir");
 
-$("#widget-content-Text1").html("");
+
 $("#widget-content-Text1").append(ti);
 
   
     }
 	}
+	$("#widget-content-Text1").html("");
 });
