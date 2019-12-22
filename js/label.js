@@ -1,7 +1,7 @@
 var labe = $(".archive-page-header h2#basi").text();
 
 $.ajax({
-    url: 'https://izmirmag.net/feeds/posts/summary?q='+labe+'&max-results=55&alt=json-in-script',
+    url: 'https://izmirmag.net/feeds/posts/summary?q='+labe+'&max-results=150&alt=json-in-script',
     type: 'get',
     dataType: "jsonp",
     success: function(a){
