@@ -9,7 +9,7 @@ $.ajax({
 var srt = a.feed.entry.sort(function (b, a){
 b = b.published.$t.replace(/-|:|\.|\+|T/g,"");
 a = a.published.$t.replace(/-|:|\.|\+|T/g,"");
-return  b > a ? -1:1;});
+return  b > a ? 1:-1;});
 
 for (var i = srt.length - 1; i+1 > 0; i--) {
         for (var j = 0; j < a.feed.entry[i].link.length; j++) {
