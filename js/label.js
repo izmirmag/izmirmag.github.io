@@ -80,8 +80,9 @@ if(a.feed.entry[i].link[ce].href == "http://o.com")
   var pe = a.feed.entry[i].category[0].term;
         var pstt = p.split("//")[0];
         var ttsp = p.split("//")[2];
-var lo = p.split("// ")[2];
-if(lo===undefined){var lo =" İzmir"}
+if ("georss$featurename" in a.feed.entry[i]) {
+var lo = "<loc>"+a.feed.entry[i].georss$featurename.$t+"</loc>";
+} else if(lo !== undefined){lo = "<loc>"+p.split("//")[2]+"</loc>";} else{lo =""}
 
 
 
@@ -97,7 +98,7 @@ if (!e.toString().match("mekan")) {
 var takvim = '<div class="meta-items"><a class="meta-item meta-item-date" href="' + ik + '"><span>' + dt + '</span></a></div>';
 } else {takvim = ""}	
 
-var it = '<div class="shad item"><div class="item-main">'+takvim+'<a href="' + ik + '" class="thumbnail item-thumbnail"><span class="item-thumbnail-resize-portrait"><img src="' + rs + '" class="optimized" style="bottom: 0px;"></span></a><div class="item-content"><div class="bg item-labels">'+e+'<a href="/search/label/'+lo+'" id="thk" class="'+lo+'">'+lo+'</a></div></div></div><div class="item-sub"><h3 class="item-title"><a href="' + ik + '">' + ppl + pstt + '</a></h3><loc>' + lo + '</loc><div style="clear:both">'+ikm+'</div></div></div>';
+var it = '<div class="shad item"><div class="item-main">'+takvim+'<a href="' + ik + '" class="thumbnail item-thumbnail"><span class="item-thumbnail-resize-portrait"><img src="' + rs + '" class="optimized" style="bottom: 0px;"></span></a><div class="item-content"><div class="bg item-labels">'+e+'</div></div></div><div class="item-sub"><h3 class="item-title"><a href="' + ik + '">' + ppl + pstt + '</a></h3>' + lo + '<div style="clear:both">'+ikm+'</div></div></div>';
 
 
 
