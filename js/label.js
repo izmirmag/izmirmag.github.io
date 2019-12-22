@@ -1,5 +1,5 @@
 var labe = $(".archive-page-header h2#basi").text();
-
+$("#widget-content-Text1").html("");
 $.ajax({
     url: 'https://izmirmag.net/feeds/posts/summary?q='+labe+'&max-results=150&alt=json-in-script',
     type: 'get',
@@ -106,8 +106,6 @@ $("#widget-content-Text1").append(ti);
 
   
     }
-	    
-	    	$("#widget-content-Text1").html("");
 	    
 	}
 
