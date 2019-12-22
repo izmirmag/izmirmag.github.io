@@ -106,6 +106,9 @@ $("#widget-content-Text1").append(ti);
 
   
     }
+	    
+	    	$("#widget-content-Text1").html("");
+	    
 	}
-	$("#widget-content-Text1").html("");
+
 });
