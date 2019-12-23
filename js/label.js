@@ -5,7 +5,7 @@ $.ajax({
     dataType: "jsonp",
     success: function(a){
 	    
-$("#widget-content-Text1").html("");
+//$("#widget-content-Text1").html("");
 	    
 var srt = a.feed.entry.sort(function (b, a){
 b = b.published.$t.replace(/-|:|\.|\+|T/g,"");
