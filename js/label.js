@@ -1,10 +1,11 @@
 var labe = $(".archive-page-header h2#basi").text();
-$("#widget-content-Text1").html("");
 $.ajax({
     url: 'https://izmirmag.net/feeds/posts/summary?q='+labe+'&max-results=150&alt=json-in-script',
     type: 'get',
     dataType: "jsonp",
     success: function(a){
+	    
+$("#widget-content-Text1").html("");
 	    
 var srt = a.feed.entry.sort(function (b, a){
 b = b.published.$t.replace(/-|:|\.|\+|T/g,"");
