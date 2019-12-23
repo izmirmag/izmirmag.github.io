@@ -88,7 +88,7 @@ var lo = "<loc> "+a.feed.entry[i].georss$featurename.$t+"</loc>";
 
 
 
-if ("media$thumbnail" in a.feed.entry[i]) {var rs = a.feed.entry[i].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s1")} 
+if ("media$thumbnail" in a.feed.entry[i]) {var rs = a.feed.entry[i].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s200")} 
 else if (a.feed.entry[i].link[0].rel == "related") {
 rs = a.feed.entry[i].link[0].href;
 } else { rs = "https://1.bp.blogspot.com/-u5Z56Wg_wrc/Xf_dOlX-roI/AAAAAAAAUcs/k6FaEIHpeh4NrAIjJU8z7UkS-xf4fP1cACLcBGAsYHQ/s300/no.png"}
