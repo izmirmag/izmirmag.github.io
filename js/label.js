@@ -25,6 +25,7 @@ var month2 = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", 
 var day = d.split("-")[2].substring(0, 2);
 var hour = d.split("T")[1].substring(0, 5);
 var m = d.split("-")[1];
+var moy = d.split("-")[1];
 var year = d.split("-")[0];
 for (var u2 = 0; u2 < month.length; u2++) {
 if (parseInt(m) == month[u2]) {
@@ -33,7 +34,7 @@ mo = month2[u2];
 break;
 }
 }
-date = year + '-' + m + '-' + day + '-' + hour;
+var date = year + moy + day;
 
 dt = day +' <t>'+ mo +'</t> '+ year;
      
@@ -45,7 +46,14 @@ for (var c in h) {
 
 e += '<a href="/search/label/' + h[c].term + '" id="' + h[c].term + '" class="' + h[c].term + '">' + h[c].term.replace(/i/g,"İ") + '</a>';
 
+
 }
+
+        if ($('p#bgn').html().replace(/-/g,'') > date) {
+            if (e.match(/(etkinlik|>e<)/g)) {
+                e += '<a id="gec"><i class="fal fa-clock" style="top:0"></i> GEÇMİŞ ETKİNLİK</a>'
+            } 
+        } 
 
             if (e.toString().match(">ö<")) {
             var ppl = '<i class="fas fa-star" title="ÖNE ÇIKAN"></i> ';
