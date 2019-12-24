@@ -71,11 +71,11 @@ var ce;
 var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
 for (ce = 0; ce < a.feed.entry[i].link.length; ce++) {
 if(numberRegex.test(a.feed.entry[i].link[ce].type) && a.feed.entry[i].link[ce].href != "http://o.com")
-{ikm += '<i class="fa fa-try" style="color:green"></i> ' + a.feed.entry[i].link[ce].type + '' ;} 
+{ikm += '<i class="fa fa-lira-sign" style="color:green"></i> ' + a.feed.entry[i].link[ce].type + '' ;} 
 
 
 if(a.feed.entry[i].link[ce].href == "http://sb.com" || numberRegex.test(a.feed.entry[i].link[ce].type) && a.feed.entry[i].link[ce].href != "http://o.com")
-{ik2 += '<i class="fa fa-try" style="color:green"></i> ' + a.feed.entry[i].link[ce].type;
+{ik2 += '<i class="fa fa-lira-sign" style="color:green"></i> ' + a.feed.entry[i].link[ce].type;
 fiy += a.feed.entry[i].link[ce].type;
 } 
 
