@@ -4,9 +4,9 @@ $.ajax({
     type: 'get',
     dataType: "jsonp",
     success: function(a){
-	    
+     
 $("#widget-content-Text1").html("");
-	    
+     
 var srt = a.feed.entry.sort(function (b, a){
 b = b.published.$t.replace(/-|:|\.|\+|T/g,"");
 a = a.published.$t.replace(/-|:|\.|\+|T/g,"");
@@ -41,7 +41,7 @@ dt = day +' <t>'+ mo +'</t> '+ year;
         var e = "";
         var h = a.feed.entry[i].category;
 
-for (var c = 0; c < h.length; c++) {
+for (var c in h) {
 
 e += '<a href="/search/label/' + h[c].term + '" id="' + h[c].term + '" class="' + h[c].term + '">' + h[c].term.replace(/i/g,"İ") + '</a>';
 
@@ -78,10 +78,9 @@ if(a.feed.entry[i].link[ce].href == "http://o.com")
 
 
         var p = a.feed.entry[i].title.$t;
-  var pe = a.feed.entry[i].category[0].term;
         var pstt = p.split("//")[0];
         var ttsp = p.split("//")[2];
-	var lotest = p.split("//")[2];
+ var lotest = p.split("//")[2];
 if ("georss$featurename" in a.feed.entry[i]) {
 var lo = "<loc> "+a.feed.entry[i].georss$featurename.$t+"</loc>";
 } else if(lotest !== undefined){lo = "<loc> "+p.split("//")[2]+"</loc>";} else{lo =""}
@@ -98,7 +97,7 @@ var it22 = '<div class="shad item list-item box"><a href="' + ik + '" class="thu
 
 if (!e.toString().match("mekan")) {
 var takvim = '<div class="meta-items"><a class="meta-item meta-item-date" href="' + ik + '"><span>' + dt + '</span></a></div>';
-} else {takvim = ""}	
+} else {takvim = ""} 
 
 var it = '<div class="shad item"><div class="item-main">'+takvim+'<a href="' + ik + '" class="thumbnail item-thumbnail"><span class="item-thumbnail-resize-portrait"><img src="' + rs + '" class="optimized" style="bottom: 0px;"></span></a><div class="item-content"><div class="bg item-labels">'+e+'</div></div></div><div class="item-sub"><h3 class="item-title"><a href="' + ik + '">' + ppl + pstt + '</a></h3>' + lo + '<div style="clear:both">'+ikm+'</div></div></div>';
 
@@ -108,11 +107,9 @@ $("#widget-content-Text1").append(it);
 
   
     }
-	    
-	}
+     
+ }
 
 }).done(function() {
-optimize_thumbnail();
+optimize_thumbnail()
   });
-
-
