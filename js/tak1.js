@@ -11,7 +11,7 @@ var id=Number(w.id);var dd=new Date(a.dt*1000).toUTCString().replace("GMT","")+'
 <div id="wind" title="rüzgar"><i class="fas fa-wind" style="-webkit-transform: scaleX(-1);transform: scaleX(-1);"></i> '+wind+' km/sa</div>\
 <div class="wth"></div>\
 </a>\
-';$("#w").html(yaz);var hva='<div id="ow-today"><a href="/hava"><img src="https://izmirmag.github.io/css/we/25/'+w.icon+'.png" style="float:left;margin:8px;width:25px"/><p style="display:block;margin-top:5px;line-height:20px;width:100px;color:#fff">'+temp+'°c<br> İzmir, TR</p></a></div>';$("#hva").html(hva)
+';$("#w").html(yaz);var hva='<div id="ow-today"><a href="/hava"><img src="https://izmirmag.github.io/css/we/'+w.icon+'.png" style="float:left;margin:7px 8px 0;width:35px"/><p style="display:block;margin-top:5px;line-height:20px;width:100px;color:#fff">'+temp+'°c<br> İzmir, TR</p></a></div>';$("#hva").html(hva)
 $.ajax({url:url+'forecast/daily?id=311044&mode=xml&units=metric&cnt=6&lang=tr'+ai,type:'get',dataType:"xml",cache:true,success:function(a){var c={imgpath:"https://izmirmag.github.io/css/we/25/",days:["Paz","Pzt","Sal","Çar","Per","Cum","Cmt"]};var i="";$(a).find("time").each(function(k,l){var o=$(this);var p=new Date($(this).attr("day"));var q=p.getDay();var m=Math.round(o.find("temperature").attr("day"))+"&#176;C";if(k!=0){i+='<div class="dys"><span>'+c.days[q]+'</span><p><img src="'+c.imgpath+o.find("symbol").attr("var")+'.png" title="'+o.find("symbol").attr("name")+'"> <b>'+m+'</b></p></div>';}});$(".wth").html(i);}});}});}
 im();
 
