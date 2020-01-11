@@ -4,7 +4,7 @@ var id=Number(w.id);var dd=new Date(a.dt*1000).toUTCString().replace("GMT","")+'
 <a href="/hava">\
 <div id="icon">'+icon+'</div>\
 <div id="desc">'+desc+'</div>\
-<div id="temp">'+temp+'<sup style="font-size:25px">°c</sup></div>\
+<div id="temp"><i class="fal fa-thermometer-full"></i> '+temp+'<sup style="font-size:25px">°c</sup></div>\
 <div id="feel">Hissedilen: &nbsp;&nbsp;'+feel+'</div>\
 <div id="pres" title="basınç"><i class="fas fa-water" style="transform: rotate(90deg) rotateX(180deg) scaleX(0.7);-webkit-transform: rotate(90deg) rotateX(180deg) scaleX(0.7);"></i> '+pres+'hpA</div>\
 <div id="hum" title="nem"><i class="fas fa-humidity"></i> '+hum+'%</div>\
