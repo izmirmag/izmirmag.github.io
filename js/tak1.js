@@ -2,13 +2,13 @@ function im(){$("#w").html("<div id='loader'></div>");var url='https://api.openw
 var id=Number(w.id);var dd=new Date(a.dt*1000).toUTCString().replace("GMT","")+' GMT-3';var d=new Date(dd).toUTCString().split(" ")[4];var icon='<img src="https://izmirmag.github.io/css/we/'+w.icon+'.png">';var temp=m.temp.toString().substring(0,3);var feel=m.feels_like+"°";var pres=m.pressure;var hum=m.humidity;var wind=a.wind.speed;var windd=a.wind.deg;var yaz='\
 <div id="city"><i class="fal fa-map-marker"></i> İzmir,TR <t onclick="im()"><i class="fal fa-history"></i> '+d+'<t></div>\
 <a href="/hava">\
-<div id="icon">'+icon+'</div>\
-<div id="desc">'+desc+'</div>\
+<div id="wicon">'+icon+'</div>\
+<div id="wdesc">'+desc+'</div>\
 <div id="temp"><i class="fal fa-thermometer-full"></i> '+temp+'<sup style="font-size:25px">°c</sup></div>\
 <div id="feel">Hissedilen: &nbsp;&nbsp;'+feel+'</div>\
 <div id="pres" title="basınç"><i class="fas fa-water" style="transform: rotate(90deg) rotateX(180deg) scaleX(0.7);-webkit-transform: rotate(90deg) rotateX(180deg) scaleX(0.7);"></i> '+pres+'hpA</div>\
-<div id="hum" title="nem"><i class="fas fa-humidity"></i> '+hum+'%</div>\
-<div id="wind" title="rüzgar"><i class="fas fa-wind" style="-webkit-transform: scaleX(-1);transform: scaleX(-1);"></i> '+wind+' km/sa</div>\
+<div id="whum" title="nem"><i class="fas fa-humidity"></i> '+hum+'%</div>\
+<div id="wwind" title="rüzgar"><i class="fas fa-wind" style="-webkit-transform: scaleX(-1);transform: scaleX(-1);"></i> '+wind+' km/sa</div>\
 <div class="wth"></div>\
 </a>\
 ';$("#w").html(yaz);var hva='<div id="ow-today"><a href="/hava"><img src="https://izmirmag.github.io/css/we/'+w.icon+'.png" style="float:left;margin:7px 8px 0;width:35px"/><p style="display:block;margin-top:5px;line-height:20px;width:100px;color:#fff">'+temp+'°c<br> İzmir, TR</p></a></div>';$("#hva").html(hva)
