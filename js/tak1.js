@@ -6,7 +6,7 @@ var id=Number(w.id);var dd=new Date(a.dt*1000).toUTCString().replace("GMT","")+'
 <div id="wdesc">'+desc+'</div>\
 <div id="temp"><i class="fal fa-thermometer-full"></i> '+temp+'<sup style="font-size:25px">°c</sup></div>\
 <div id="feel">Hissedilen: &nbsp;&nbsp;'+feel+'</div>\
-<div id="pres" title="basınç"><i class="fas fa-water" style="transform: rotate(90deg) rotateX(180deg) scaleX(0.7);-webkit-transform: rotate(90deg) rotateX(180deg) scaleX(0.7);"></i> '+pres+'hpA</div>\
+<div id="pres" title="basınç"><i class="fas fa-tachometer-alt"></i> '+pres+'hpA</div>\
 <div id="whum" title="nem"><i class="fas fa-humidity"></i> '+hum+'%</div>\
 <div id="wwind" title="rüzgar"><i class="fas fa-wind" style="-webkit-transform: scaleX(-1);transform: scaleX(-1);"></i> '+wind+' km/sa</div>\
 <div class="wth"></div>\
