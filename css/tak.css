@@ -5,7 +5,7 @@
     background: #2980b9;
     color: #fff;
     display: inline-block;
-    margin-bottom: -15px;}#w t{float:right;cursor:pointer}#w a{color:#fff}#icon{width:50px;float:right;display:block;clear:both;margin-right:5px;margin-top:5px}#temp{font-size:30px}#pres,#hum,#wind{float:left;margin-top:5px;margin-right:20px}#desc{float:right;clear:both;font-style:italic}.wth{margin: 10px 0 0 0;
+    margin-bottom: -15px;}#w t{float:right;cursor:pointer}#w a{color:#fff}#wicon{width:50px;float:right;display:block;clear:both;margin-right:5px;margin-top:5px}#temp{font-size:30px}#pres,#whum,#wwind{float:left;margin-top:5px;margin-right:20px}#wdesc{float:right;clear:both;font-style:italic}.wth{margin: 10px 0 0 0;
     border-top: 1px solid rgba(255,255,255,0.29);
     width: 100%;
     display: inline-block;
