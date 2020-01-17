@@ -1,5 +1,5 @@
 function im(){$("#w").html("<div id='loader'></div>");var url='https://api.openweathermap.org/data/2.5/';var ai='&appid=41c06d8f13cfbd976e5123eb5821a4e6';$.ajax({url:url+'weather?id=311044&lang=tr'+ai+'&mode=json&units=metric',type:'get',dataType:"json",cache:true,success:function(a){var w=a.weather[0];var m=a.main;var desc=w.description
-var id=Number(w.id);var dd=new Date(a.dt*1000).toUTCString().replace("GMT","")+' GMT-3';var d=new Date(dd).toUTCString().split(" ")[4];var icon='<img src="https://izmirmag.github.io/css/we/'+w.icon+'.png">';var temp=m.temp.toString().substring(0,3);var feel=m.feels_like+"°";var pres=m.pressure;var hum=m.humidity;var wind=a.wind.speed;var windd=a.wind.deg;var yaz='\
+var id=Number(w.id);var dd=new Date(a.dt*1000).toUTCString().replace("GMT","")+' GMT-3';var d=new Date(dd).toUTCString().split(" ")[4];var icon='<img src="https://izmirmag.github.io/css/we/'+w.icon+'.png">';var temp=m.temp.toString().substring(0,3);var feel=m.feels_like+"°";var pres=m.pressure;var hum=m.humidity;var wind=String(Number(a.wind.speed) * (60*60)/1000).substring(0,2);var windd=a.wind.deg;var yaz='\
 <div id="city"><i class="fal fa-map-marker"></i> İzmir,TR <t onclick="im()"><i class="fal fa-history"></i> '+d+'<t></div>\
 <a href="/hava">\
 <div id="wicon">'+icon+'</div>\
