@@ -1,0 +1,82 @@
+
+#content .widget, 
+#sidebar .widget, 
+#ilk .widget, 
+.sc, 
+#hm li.menu-item, 
+#yan, 
+.header-social-icons, 
+#footer .widget.social_icons li, 
+.follow-by-email-address, .post-header,
+a.facebook-comments-title.active,.jplist-drop-down ul,
+.follow-by-email-submit {background: #204b67 !important;}
+
+a:link, a:visited,
+#footer, #footer a,
+.post-title, 
+.entry-title, 
+.title, 
+#basi,
+.post-title a, 
+.entry-title a, 
+.title a, 
+.item-title a,
+.meta-item-date,
+#hm i, #hm img, #hm a,
+a.post-meta,
+.menu-item a,
+.e, .ui-accordion-header,
+.post-body,
+#yrm, #tkvm, #hata, #on,
+.widget .item, .widget .item a,loc,
+.follow-by-email-address, .e .fa,h4,
+a.tab-link.active, div.sn, #ack, #frag,.tab-link-inner,
+.jplist-group li span,.jplist-drop-down .jplist-dd-panel:before,.jplist-drop-down .jplist-dd-panel:after,.jplist-drop-down,.ara:before,
+  .jplist-panel input[type=text],.jplist-drop-down ul li,
+#basi a, #basi span{color:#ccc!important;}
+
+
+a.facebook-comments-title.active {
+    border-bottom-color: transparent!important;
+}
+
+.tkv-pages, #w, .top-bar, .fb-like, .meta-item-date{background:#204b67!important;}
+
+.etk .e, .soci {
+    background: rgba(0, 0, 0, 0.12) !important;
+}
+#header-section,#yrm, #tkvm, #hata, .e.d{background: #0f5a8a !important;}
+
+.widget .item {background: transparent !important;}
+
+.widget .thumbnail img, .social-media,#blog-gorsel, #textarea img, .rsm, ins.adsbygoogle {
+    opacity: 0.5;
+}
+
+.item-labels a {
+    box-shadow: inset 0 0 15px 0px #444!important;
+}
+.feed.widget.blogging .item-labels #indirimli, .feed.widget.blogging .item-labels #ücretsiz, .fb-like {
+    box-shadow: -5px 0 10px 10px #204b67!important;
+}
+
+div[itemtype=&quot;http://schema.org/Article&quot;] .post-header, .widget .item, .ticker-item-inner {
+    box-shadow: 0 0 9px #173548!important;
+}
+
+#yan .menu-item {
+    box-shadow: none;
+}
+
+  #footer,.facebook-comments{border:none;box-shadow: 0 0 100px 10px #204b67;}
+
+
+body, .footer-inner, .feed-widget-viewall span, #yan .menu-item, .widget#HTML2, .widget#HTML7, .ui-state-active, a.tab-link.active, div.sn, #ack, #frag {
+  background: #173548 !important;
+}
+
+#gmap,.gsc-control-cse, .reactions-iframe{
+filter: contrast(60%) hue-rotate(180deg) invert(100%);
+-webkit-filter: contrast(60%) hue-rotate(180deg) invert(100%);
+}
+  
