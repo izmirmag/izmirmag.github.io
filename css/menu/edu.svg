@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+<circle style="fill:#47D7FD;" cx="256" cy="256" r="256"/>
+<path style="fill:#0FADF5;" d="M512,256c0-8.268-0.407-16.44-1.174-24.507L427,147.667L85,364.333l146.493,146.493  C239.56,511.593,247.732,512,256,512C397.385,512,512,397.385,512,256z"/>
+<rect x="85" y="147.67" style="fill:#FFFFFF;" width="342" height="216.67"/>
+<rect x="255.95" y="147.67" style="fill:#E0E0E0;" width="171.05" height="216.67"/>
+<path style="fill:#C0C0C0;" d="M415,353H97V159h318V353z M109,341h294V171H109V341z"/>
+<polygon style="fill:#758F9B;" points="415,159 255.952,159 255.952,171 403,171 403,341 255.952,341 255.952,353 415,353 "/>
+<rect x="132.83" y="208" style="fill:#E0E0E0;" width="246.33" height="8"/>
+<rect x="255.95" y="208" style="fill:#C0C0C0;" width="123.22" height="8"/>
+<rect x="132.83" y="239.33" style="fill:#E0E0E0;" width="246.33" height="8"/>
+<rect x="255.95" y="239.33" style="fill:#C0C0C0;" width="123.22" height="8"/>
+<rect x="132.83" y="271" style="fill:#E0E0E0;" width="167.33" height="8"/>
+<rect x="255.95" y="271" style="fill:#C0C0C0;" width="44.22" height="8"/>
+<g>
+	<rect x="132.83" y="297.67" style="fill:#E0E0E0;" width="123.33" height="8"/>
+	<rect x="255.95" y="297.67" style="fill:#E0E0E0;" width="0.215" height="8"/>
+</g>
+<polygon style="fill:#0D47A0;" points="374.333,378.333 350.297,367.641 327.333,378.333 327.333,303.333 374.333,303.333 "/>
+<polygon style="fill:#0A3A7F;" points="374.333,303.333 350.333,303.333 350.297,367.641 374.333,378.333 "/>
+<circle style="fill:#D6283B;" cx="351" cy="299.33" r="36.33"/>
+<path style="fill:#C20231;" d="M351,263c-0.224,0-0.444,0.013-0.667,0.017v72.633c0.223,0.004,0.443,0.017,0.667,0.017  c20.066,0,36.333-16.267,36.333-36.333S371.066,263,351,263z"/>
+</svg>
