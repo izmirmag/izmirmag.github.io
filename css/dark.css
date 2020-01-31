@@ -60,7 +60,7 @@ a.facebook-comments-title.active {
     box-shadow: -5px 0 10px 10px #204b67!important;
 }
 
-div[itemtype=&quot;http://schema.org/Article&quot;] .post-header, .widget .item, .ticker-item-inner {
+div[itemtype=&quot;http://schema.org/Article&quot;] .post-header, .widget .item, .ticker-item-inner, #head2 {
     box-shadow: 0 0 9px #173548!important;
 }
 
@@ -71,7 +71,7 @@ div[itemtype=&quot;http://schema.org/Article&quot;] .post-header, .widget .item,
   #footer,.facebook-comments{border:none;box-shadow: 0 0 100px 10px #204b67;}
 
 
-body, .footer-inner, .feed-widget-viewall span, #yan .menu-item, .widget#HTML2, .widget#HTML7, .ui-state-active, a.tab-link.active, div.sn, #ack, #frag {
+body, .footer-inner, .feed-widget-viewall span, #yan .menu-item, .widget#HTML2, .widget#HTML7, .ui-state-active, a.tab-link.active, div.sn, #ack, #frag, #head2 {
   background: #173548 !important;
 }
 
