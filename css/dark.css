@@ -60,7 +60,7 @@ a.facebook-comments-title.active {
     box-shadow: -5px 0 10px 10px #204b67!important;
 }
 
-div[itemtype=&quot;http://schema.org/Article&quot;] .post-header, .widget .item, .ticker-item-inner, #head2 {
+div[itemtype="http://schema.org/Article"] .post-header, .widget .item, .ticker-item-inner, #head2 {
     box-shadow: 0 0 9px #173548!important;
 }
 
