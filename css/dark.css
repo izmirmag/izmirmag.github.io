@@ -40,7 +40,7 @@ a.facebook-comments-title.active {
     border-bottom-color: transparent!important;
 }
 
-.tkv-pages, #w, .top-bar, .fb-like, .meta-item-date{background:#204b67!important;}
+.tkv-pages, #w, .top-bar, .fb-like, .meta-item-date,#head2{background:#204b67!important;}
 
 .etk .e, .soci {
     background: rgba(0, 0, 0, 0.12) !important;
@@ -71,7 +71,7 @@ div[itemtype="http://schema.org/Article"] .post-header, .widget .item, .ticker-i
   #footer,.facebook-comments{border:none;box-shadow: 0 0 100px 10px #204b67;}
 
 
-body, .footer-inner, .feed-widget-viewall span, #yan .menu-item, .widget#HTML2, .widget#HTML7, .ui-state-active, a.tab-link.active, div.sn, #ack, #frag, #head2 {
+body, .footer-inner, .feed-widget-viewall span, #yan .menu-item, .widget#HTML2, .widget#HTML7, .ui-state-active, a.tab-link.active, div.sn, #ack, #frag, #slideLeft, #slideRight {
   background: #173548 !important;
 }
 
