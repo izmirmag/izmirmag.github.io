@@ -2,7 +2,7 @@
 #content .widget, 
 #sidebar .widget, 
 #ilk .widget, 
-.sc, 
+.sc, .hm, .mnn li.menu-item,
 .header-social-icons, 
 #footer .widget.social_icons li, 
 .follow-by-email-address, .post-header,
@@ -69,7 +69,7 @@ div[itemtype="http://schema.org/Article"] .post-header, .widget .item, .ticker-i
   #footer,.facebook-comments{border:none;box-shadow: 0 0 100px 10px #204b67;}
 
 
-body, .footer-inner, .feed-widget-viewall span, #yan .menu-item, .widget#HTML2, .widget#HTML7, .ui-state-active, a.tab-link.active, div.sn, #ack, #frag, #slideLeft, #slideRight,.mnn li.menu-item  {
+body, .footer-inner, .feed-widget-viewall span, #yan .menu-item, .widget#HTML2, .widget#HTML7, .ui-state-active, a.tab-link.active, div.sn, #ack, #frag, #slideLeft, #slideRight  {
   background: #173548 !important;
 }
 
