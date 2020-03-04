@@ -38,7 +38,7 @@ a.facebook-comments-title.active {
     border-bottom-color: transparent!important;
 }
 
-.tkv-pages, #w, .top-bar, .fb-like, .meta-item-date,#head2{background:#204b67!important;}
+.tkv-pages, #w, .top-bar, .fb-like, .meta-item-date,#head2,.srtdiv{background:#204b67!important;}
 
 .etk .e, .soci {
     background: rgba(0, 0, 0, 0.12) !important;
@@ -58,7 +58,7 @@ a.facebook-comments-title.active {
     box-shadow: -5px 0 10px 10px #204b67!important;
 }
 
-div[itemtype="http://schema.org/Article"] .post-header, .widget .item, .ticker-item-inner, #head2 {
+div[itemtype="http://schema.org/Article"] .post-header, .widget .item, .ticker-item-inner, #head2,.srtdiv {
     box-shadow: 0 0 9px #173548!important;
 }
 
