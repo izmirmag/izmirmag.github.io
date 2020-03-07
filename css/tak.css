@@ -3,6 +3,7 @@
     border-radius: 5px 5px 0 0;
     font-size: 13px;
     background: #2980b9;
+    width:100%;
     color: #fff;
     display: inline-block;
     margin-bottom: -15px;}#w t{float:right;cursor:pointer}#w a{color:#fff}#wicon{width:50px;float:right;display:block;clear:both;margin-right:5px;margin-top:5px}#temp{font-size:30px}#pres,#whum,#wwind{float:left;margin-top:5px;margin-right:20px}#wdesc{float:right;clear:both;font-style:italic}.wth{margin: 10px 0 0 0;
